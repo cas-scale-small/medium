@@ -1,0 +1,19 @@
+{
+  "name": "@inquirer/esm-integration-tests",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test **/*.test.*"
+  },
+  "devDependencies": {
+    "@inquirer/core": "workspace:*",
+    "@inquirer/input": "workspace:*",
+    "@inquirer/prompts": "workspace:*",
+    "inquirer": "workspace:*"
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  }
+}

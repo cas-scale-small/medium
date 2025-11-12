@@ -1,0 +1,14 @@
+{
+  "extends": "@repo/tsconfig",
+  "include": [
+    "vitest.*.ts",
+    "tools/**/*",
+    "**/*.test.ts",
+    "**/*.d.ts",
+    "**/examples/**/*"
+  ],
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "noEmit": true
+  }
+}

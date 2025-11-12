@@ -1,0 +1,24 @@
+node_modules
+dist
+coverage
+.idea
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.turbo
+.DS_Store
+
+# tshy files
+.tshy
+.tshy-build
+# tshy build temporary package.json files while building which end up throwing turbo watch in an infinite loop.
+**/src/package.json
+
+# AI tools
+.claude/settings.local.json
+.cursor/mcp.json
+PLAN.md
