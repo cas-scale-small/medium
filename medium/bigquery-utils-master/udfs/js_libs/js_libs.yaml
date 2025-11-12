@@ -1,0 +1,28 @@
+compromise:
+  versions:
+    - 11.14.3
+js-levenshtein:
+  versions:
+    - 1.1.6
+jstat:
+  versions:
+    - 1.9.3
+    - 1.9.4
+bn.js:
+  versions:
+    - 5.2.1
+fast-xml-parser:
+  versions:
+    - 4.4.1
+txml:
+  versions:
+    - 5.1.1
+base64-js:
+  versions:
+    - 1.5.1
+pako:
+  versions:
+    - 2.1.0
+moment:
+  versions:
+    - 2.30.1

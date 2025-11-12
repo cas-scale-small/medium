@@ -1,0 +1,10 @@
+{
+    "warehouse": "bigquery",
+    "defaultSchema": "${DATASET_ID}",
+    "defaultDatabase": "${PROJECT_ID}",
+    "defaultLocation": "${BQ_LOCATION}",
+    "vars": {
+        "gcsBucket": "${GCS_BUCKET}",
+        "testDataGcsBucket": "${TEST_DATA_GCS_BUCKET}"
+    }
+}

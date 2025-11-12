@@ -1,0 +1,31 @@
+# Google Cloud Build config to deploy bqutils
+# BigQuery UDFs in your own project and location
+#
+# Manual Execution:
+# Use the below command to invoke the build manually.
+# Note the substitutions for _PROJECT_ID and _BQ_LOCATION.
+#
+# Example Run:
+# gcloud builds submit . --substitutions _PROJECT_ID=YOUR_PROJECT_ID,_BQ_LOCATION=US
+#
+
+steps:
+###########################################################
+# Deploy UDFs and run unit tests
+###########################################################
+- name: gcr.io/bqutil/bq_udf_ci:infrastructure-public-image-bqutil
+  id: deploy_and_test_udfs
+  dir: ${_WORKING_DIR}
+  entrypoint: bash
+  args:
+    - deploy_and_run_tests.sh
+  env:
+    - PROJECT_ID=${_PROJECT_ID}
+    - BQ_LOCATION=${_BQ_LOCATION}
+    - SHORT_SHA=
+    - JS_BUCKET=gs://bqutil-lib/bq_js_libs
+substitutions:
+  _WORKING_DIR: tests/dataform_testing_framework # default value when submitting from udfs/ directory
+options:
+  logging: CLOUD_LOGGING_ONLY
+
