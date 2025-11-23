@@ -1,0 +1,19 @@
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: My first action
+        run: cmd -a ${{ secrets.GITHUB_TOKEN }}

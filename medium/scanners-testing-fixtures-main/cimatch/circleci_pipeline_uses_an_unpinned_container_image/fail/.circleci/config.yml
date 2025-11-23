@@ -1,0 +1,18 @@
+workflows:
+  my-workflow:
+    jobs:
+      - run-tests:
+          context:
+            - org-global
+            - my-context
+version: 2
+jobs:
+  run-tests:
+    docker:
+      - image: cimg/android:2022.09.2-ndk@sha256:1871b9d0f55b07c1f1962f0405920567f4c820401a049173921b4f031d39673b
+    executor:
+    machine:
+    steps:
+      - run:
+          name: "echo environment variables from context"
+          command: echo $MY_CONTEXT_VAR

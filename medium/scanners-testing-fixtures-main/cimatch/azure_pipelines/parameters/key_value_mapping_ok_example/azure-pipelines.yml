@@ -1,0 +1,25 @@
+trigger:
+  - main
+pool:
+  vmImage: ubuntu-latest
+
+# sequences of parameters
+parameters:
+  service: 'data-service'
+  dockerData: 'some-data'
+  artifactId: 'engine-hours-scheduler-service'
+  dockerRepo: 'some-engine-hours-scheduler'
+
+
+stages:
+  - stage: 'Build'
+    displayName: 'Build'
+    jobs:
+      - job: 'Build_And_Package'
+        displayName: 'Build & package artifacts'
+        pool:
+          name: 'Agent'
+        steps:
+          - bash: echo "simple test"
+          - checkout: self
+            displayName: 'Git clone self repository'

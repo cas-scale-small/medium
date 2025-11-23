@@ -1,0 +1,32 @@
+{
+  "name": "test2",
+  "version": "1.0.0",
+  "description": "Dependecny chain abuse scanner",
+  "main": "./src/main.ts",
+  "bin": {
+    "deppy": "./dist/src/main.js"
+  },
+  "scripts": {
+    "build": "rm -rf dist/src && rm -rf dist/test && npx tsc ",
+    "build-ext": "./build-extractor.sh",
+    "start": "npx ts-node src/main.ts",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cider-research/deppy.git"
+  },
+  "author": "Asi Greenholts",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cider-research/deppy/issues"
+  },
+  "homepage": "https://github.com/cider-research/deppy#readme",
+  "dependencies": {
+    "glob": "^8.0.3"
+  },
+  "devDependencies": {
+    "axios-mock-adapter": "^8.23.1"
+  }
+}

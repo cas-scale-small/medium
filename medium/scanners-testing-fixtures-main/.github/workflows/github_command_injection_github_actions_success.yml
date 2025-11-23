@@ -1,0 +1,30 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run tests
+        run: |
+          pytest
+      - name: Check PR title
+        run: |
+          title="${{ github.event.pull_request.title }}"
+          if [[ $title =~ ^octocat ]]; then
+          echo "PR title starts with 'octocat'"
+          exit 0
+          else
+          echo "PR title did not start with 'octocat'"
+          exit 1
+          fi

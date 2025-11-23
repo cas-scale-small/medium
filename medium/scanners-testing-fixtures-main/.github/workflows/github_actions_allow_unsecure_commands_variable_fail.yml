@@ -1,0 +1,15 @@
+name: CI
+
+on: [push]
+
+env:
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        env:
+          TEST: ${{ github.event.pull_request.title }}
+          

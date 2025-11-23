@@ -1,0 +1,5 @@
+extends:  # Required. Extends a template
+  template: /my/tpl # 
+  parameters:  # Parameters used in the extend
+    moti: banana # Name/value pairs.
+name: AzurePipelinesExtendsValidBasic

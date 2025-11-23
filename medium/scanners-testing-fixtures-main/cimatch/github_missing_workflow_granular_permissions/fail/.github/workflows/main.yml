@@ -1,0 +1,27 @@
+name: GitHub Actions Demo
+on:
+  issues:
+    types:
+      - opened
+      - labeled
+  push:
+    branches:
+      - main
+      - 'releases/**'
+permissions: 
+    content: write
+jobs:
+  Deploy-Code-Actions:
+      permissions:
+        content: write
+        pull-requests: read
+      runs-on: ubuntu-latest
+      steps:
+        - run: gh issues 
+  Explore-GitHub-Actions:
+    permissions:
+      issues: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl xxx | sha1sum

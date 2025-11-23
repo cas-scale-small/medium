@@ -1,0 +1,19 @@
+jobs:
+  # track deployments on the environment
+- deployment: DeployWeb
+  displayName: deploy Web App
+  pool:
+    vmImage: ubuntu-latest
+  # creates an environment if it doesn't exist
+  environment:
+    name: nameVal # Name of environment. 
+    resourceName: resourceNameVal # Name of resource. 
+    resourceId: resourceIdVal # Id of resource. 
+    resourceType: resourceTypeVal # Type of environment resource. 
+    tags: tagsVal # List of tag filters. 
+  strategy:
+    # default deployment strategy, more coming...
+    runOnce:
+      deploy:
+        steps:
+        - script: echo my first deployment

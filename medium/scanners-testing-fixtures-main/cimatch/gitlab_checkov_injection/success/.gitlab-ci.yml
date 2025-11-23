@@ -1,0 +1,10 @@
+image: docker
+
+stages:
+  - build
+
+build-code-job:
+  stage: build
+  image: registry.videolan.org/dav1d-debian-unstable:20211102173310
+  script:
+    - checkov .

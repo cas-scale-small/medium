@@ -1,0 +1,25 @@
+trigger:
+  - main
+pool:
+  vmImage: ubuntu-latest
+
+# just key-value mapping variable section
+variables:
+  buildPlatform: 'x64'
+  runtime: 'win-x64'
+  buildConfiguration: 'Release'
+  system.debug: true
+
+stages:
+  - stage: 'Build'
+    displayName: 'Build'
+    jobs:
+      - job: 'Build_And_Package'
+        displayName: 'Build & package artifacts'
+        pool:
+          name: 'Agent'
+        steps:
+          - bash: echo "simple test"
+          - checkout: self
+            displayName: 'Git clone self repository'
+

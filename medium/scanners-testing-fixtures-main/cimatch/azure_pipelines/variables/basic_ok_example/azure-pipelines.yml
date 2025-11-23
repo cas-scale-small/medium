@@ -1,0 +1,26 @@
+trigger:
+  - main
+pool:
+  vmImage: ubuntu-latest
+
+# sequences of variables
+variables:
+  - name: build.name
+    value: 'some-variable-name'
+  - name: myReadOnlyVar
+    value: myValue
+    readonly: true
+
+stages:
+  - stage: 'Build'
+    displayName: 'Build'
+    jobs:
+      - job: 'Build_And_Package'
+        displayName: 'Build & package artifacts'
+        pool:
+          name: 'Agent'
+        steps:
+          - bash: echo "simple test"
+          - checkout: self
+            displayName: 'Git clone self repository'
+

@@ -1,0 +1,14 @@
+pipeline {
+  agent any
+
+  stages {
+    stage('Build') {
+      environment {
+       TOKEN = credentials("token1")
+      }
+      steps {
+        sh "curl -H 'Token: $TOKEN' https://some.api/"
+      }
+    }
+  }
+}

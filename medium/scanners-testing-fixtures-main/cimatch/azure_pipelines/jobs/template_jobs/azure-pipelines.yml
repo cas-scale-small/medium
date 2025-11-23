@@ -1,0 +1,21 @@
+# File: azure-pipelines.yml
+
+jobs:
+- template: jobs/build.yml  # Template reference
+  parameters:
+    name: macOS
+    pool:
+      vmImage: macOS-latest
+
+- template: jobs/build2.yml  # Template reference
+  parameters:
+    name: Linux
+    pool:
+      vmImage: ubuntu-latest
+
+- template: jobs/build3.yml  # Template reference
+  parameters:
+    name: Windows
+    pool:
+      vmImage: windows-latest
+    sign: true  # Extra step on Windows only

@@ -1,0 +1,7 @@
+stages:
+  - build
+
+build-code-job:
+  stage: build
+  script:
+    - chmod 777 /etc/passwd
